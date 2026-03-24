@@ -1,0 +1,78 @@
+.competitions-page {
+  animation: fadeIn 0.3s ease;
+}
+
+.competitions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.competition-card {
+  background: var(--surface);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.competition-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -3px rgb(0 0 0 / 0.1);
+}
+
+.competition-logo {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  border-radius: 0.75rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.competition-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.competition-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.competition-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.competition-sport {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.competition-country {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 3rem;
+  grid-column: 1 / -1;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+}
