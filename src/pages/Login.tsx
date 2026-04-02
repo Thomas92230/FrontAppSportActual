@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../stores/authStore'
 import { authApi } from '../services/api'
-import { Football } from 'lucide-react'
+import { Trophy } from 'lucide-react'
 import './Login.css'
 
 export default function Login() {
@@ -22,13 +22,13 @@ export default function Login() {
       const response = await authApi.login(username, password)
       login(
         {
-          id: response.user.id,
-          username: response.user.username,
-          email: response.user.email,
-          role: response.user.role,
+          id: 0,
+          username: response.username,
+          email: '',
+          role: response.authorities?.[0]?.authority ?? 'USER',
         },
         response.token,
-        response.refreshToken
+        response.token
       )
       navigate('/')
     } catch (err) {
@@ -43,7 +43,7 @@ export default function Login() {
       <div className="login-container">
         <div className="login-header">
           <div className="login-logo">
-            <Football size={48} />
+            <Trophy size={48} />
           </div>
           <h1>SportActual</h1>
           <p>Connectez-vous pour accéder à votre tableau de bord</p>
