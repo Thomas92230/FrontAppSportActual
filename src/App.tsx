@@ -6,6 +6,7 @@ import Competitions from './pages/Competitions'
 import Teams from './pages/Teams'
 import News from './pages/News'
 import Login from './pages/Login'
+import NewsDetail from './pages/NewsDetail'
 import { useAuthStore } from './stores/authStore'
 import { Navigate } from 'react-router-dom'
 
@@ -30,6 +31,7 @@ function App() {
                   <Route path="/competitions" element={<Competitions />} />
                   <Route path="/teams" element={<Teams />} />
                   <Route path="/news" element={<News />} />
+                  <Route path="/news/:id" element={<NewsDetail />} />
                 </Routes>
               </Layout>
             </ProtectedRoute>
